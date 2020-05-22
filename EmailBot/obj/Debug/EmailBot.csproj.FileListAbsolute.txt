@@ -1,0 +1,15 @@
+C:\Users\JoshuaTan\Desktop\theme\EmailBot\EmailBot\bin\Debug\EmailBot.exe.config
+C:\Users\JoshuaTan\Desktop\theme\EmailBot\EmailBot\bin\Debug\EmailBot.exe
+C:\Users\JoshuaTan\Desktop\theme\EmailBot\EmailBot\bin\Debug\EmailBot.pdb
+C:\Users\JoshuaTan\Desktop\theme\EmailBot\EmailBot\obj\Debug\EmailBot.csprojAssemblyReference.cache
+C:\Users\JoshuaTan\Desktop\theme\EmailBot\EmailBot\obj\Debug\MainWindow.g.cs
+C:\Users\JoshuaTan\Desktop\theme\EmailBot\EmailBot\obj\Debug\App.g.cs
+C:\Users\JoshuaTan\Desktop\theme\EmailBot\EmailBot\obj\Debug\EmailBot_MarkupCompile.cache
+C:\Users\JoshuaTan\Desktop\theme\EmailBot\EmailBot\obj\Debug\EmailBot_MarkupCompile.lref
+C:\Users\JoshuaTan\Desktop\theme\EmailBot\EmailBot\obj\Debug\MainWindow.baml
+C:\Users\JoshuaTan\Desktop\theme\EmailBot\EmailBot\obj\Debug\EmailBot.g.resources
+C:\Users\JoshuaTan\Desktop\theme\EmailBot\EmailBot\obj\Debug\EmailBot.Properties.Resources.resources
+C:\Users\JoshuaTan\Desktop\theme\EmailBot\EmailBot\obj\Debug\EmailBot.csproj.GenerateResource.cache
+C:\Users\JoshuaTan\Desktop\theme\EmailBot\EmailBot\obj\Debug\EmailBot.csproj.CoreCompileInputs.cache
+C:\Users\JoshuaTan\Desktop\theme\EmailBot\EmailBot\obj\Debug\EmailBot.exe
+C:\Users\JoshuaTan\Desktop\theme\EmailBot\EmailBot\obj\Debug\EmailBot.pdb
