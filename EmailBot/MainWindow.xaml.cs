@@ -38,7 +38,7 @@ namespace EmailBot
                 emailAddress = "joshua_tan@brown.edu";
             } else if (selectedEmail.Equals(Company))
             {
-                emailAddress = "joshua_tan@brown.edu";
+                emailAddress = "joshua.tan@themeinternationaltrading.com";
             }
 
             MessageBox.Show($"Email {content} sent to {emailAddress}");
