@@ -24,5 +24,40 @@ namespace EmailBot
         {
             InitializeComponent();
         }
+
+        private void SendButton_Click(object sender, RoutedEventArgs e)
+        {
+            string content = EmailContent.Text;
+            string emailAddress = "";
+            var selectedEmail = ChooseRecipient.SelectedItem;
+            if (selectedEmail.Equals(Personal))
+            {
+                emailAddress = "jtanjoshua@gmail.com";
+            } else if (selectedEmail.Equals(School))
+            {
+                emailAddress = "joshua_tan@brown.edu";
+            } else if (selectedEmail.Equals(Company))
+            {
+                emailAddress = "joshua_tan@brown.edu";
+            }
+
+            MessageBox.Show($"Email {content} sent to {emailAddress}");
+        }
+
+        private void CancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Application.Current.Shutdown();
+        }
+
+        private void ResetButton_Click(object sender, RoutedEventArgs e)
+        {
+            ChooseRecipient.SelectedIndex = -1;
+            EmailContent.Clear();
+        }
+
+        private void ChooseRecipient_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            SendButton.IsEnabled = true;
+        }
     }
 }
