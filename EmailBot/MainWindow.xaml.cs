@@ -30,10 +30,13 @@ namespace EmailBot
             InitializeComponent();
         }
 
+        // User clicks send button to send email
         private void SendButton_Click(object sender, RoutedEventArgs e)
         {
             string content = EmailContent.Text;
             string emailAddress = "";
+
+            // recipient email is set based on which email the user chose
             var selectedEmail = ChooseRecipient.SelectedItem;
             if (selectedEmail.Equals(Personal))
             {
@@ -46,16 +49,20 @@ namespace EmailBot
                 emailAddress = "joshua.tan@themeinternationaltrading.com";
             }
 
+            // Create email
             MailMessage mail = new MailMessage();
             mail.From = new MailAddress("joshua.tan@themeinternationaltrading.com");
             mail.To.Add(emailAddress);
             mail.Subject = "Email bot";
             mail.Body = content + "\n\nThis is an email sent from a bot";
+
+            // Attach email if file was selected
             if (this.filename != null)
             {
                 mail.Attachments.Add(new Attachment(this.filename));
             }
             
+            // Set up email client and send
             SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
             SmtpServer.UseDefaultCredentials = false;
             SmtpServer.Port = 25;
@@ -65,25 +72,30 @@ namespace EmailBot
 
             SmtpServer.Send(mail);
 
+            // Confirmation message
             MessageBox.Show($"Email sent to {emailAddress}");
         }
 
+        // Close app if user cancels
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
             System.Windows.Application.Current.Shutdown();
         }
 
+        // Resets all fields
         private void ResetButton_Click(object sender, RoutedEventArgs e)
         {
             ChooseRecipient.SelectedIndex = -1;
             EmailContent.Clear();
         }
 
+        // Enable send button only after user selects a recipient
         private void ChooseRecipient_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             SendButton.IsEnabled = true;
         }
 
+        // user selects file
         private void ChooseFile_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
