@@ -10,6 +10,15 @@
         <StackPanel>
             <TextBlock Text="Write your email" FontWeight="Bold" Margin="0 0 0 10"/>
             <TextBox x:Name="EmailContent"  Height="200" Padding="5"/>
+            <Grid Margin="0 10 0 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Text="Email attachment" FontWeight="Bold"/>
+                <Button Grid.Column="1" x:Name="ChooseFile" Click="ChooseFile_Click" Content="Choose File"/>
+            </Grid>
+            
             <TextBlock Text="Email recipient" FontWeight="Bold" Margin="0 10"/>
             <ComboBox x:Name="ChooseRecipient" SelectionChanged="ChooseRecipient_SelectionChanged">
                 <ComboBoxItem x:Name="Personal">Personal Email</ComboBoxItem>

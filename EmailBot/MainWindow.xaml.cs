@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Net.Mail;
+using Microsoft.Win32;
+using System.IO;
 
 namespace EmailBot
 {
@@ -21,6 +23,8 @@ namespace EmailBot
     /// </summary>
     public partial class MainWindow : Window
     {
+        private string filename;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -47,7 +51,11 @@ namespace EmailBot
             mail.To.Add(emailAddress);
             mail.Subject = "Email bot";
             mail.Body = content + "\n\nThis is an email sent from a bot";
-
+            if (this.filename != null)
+            {
+                mail.Attachments.Add(new Attachment(this.filename));
+            }
+            
             SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
             SmtpServer.UseDefaultCredentials = false;
             SmtpServer.Port = 25;
@@ -74,6 +82,15 @@ namespace EmailBot
         private void ChooseRecipient_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             SendButton.IsEnabled = true;
+        }
+
+        private void ChooseFile_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == true)
+            {
+                this.filename = openFileDialog.FileName;
+            }
         }
     }
 }
